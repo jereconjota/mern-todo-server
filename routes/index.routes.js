@@ -3,6 +3,10 @@ import { pool } from "../db.js";
 
 const router = Router();
 
+router.get("/", (req, res) => {
+    res.send("API is working. Try /api/tasks");
+});
+
 router.get("/db", async (req, res) => {
     try {
         const connection = await pool.getConnection();

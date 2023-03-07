@@ -2,6 +2,12 @@
 
 This is the server side of the MERN Todo App. It is built using Node.js, Express.js, and MySQL.
 
+## Demo
+
+You can view the demo of the API at [here](https://mern-todo-server-production.up.railway.app/)
+
+---
+
 ## Installation 
 
 1. Clone the repo
