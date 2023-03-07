@@ -12,11 +12,18 @@ app.use(express.json());
 app.use(cors());
 
 //routes
+app.get("/", (req, res) => {
+    res.send("API is working. Try /api/tasks");
+});
 app.use('/api', indexRoutes);
 app.use('/api', tasksRoutes);
+
+//routes not found
+app.use((req, res, next) => {
+    res.status(404).json({message: 'Route not found'});
+}); 
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
-
 
