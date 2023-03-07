@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  takssql:
+    image: mariadb
+    restart: always
+    ports:
+      - "3307:3306"
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: tasks_db
+    volumes:
+      - ./databases:/var/lib/mysql
+    networks:
+      - backend
+      
+networks:
+  backend:
+    driver: bridge
+  # default: 
+  #   external: 
+  #     name: ged 
+      
